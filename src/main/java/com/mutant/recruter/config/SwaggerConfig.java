@@ -21,7 +21,7 @@ public class SwaggerConfig{
 	        return new Docket(DocumentationType.SWAGGER_2)
 	                .select()
 	                .apis(RequestHandlerSelectors.basePackage("com.mutant.recruter.controller"))
-	                .paths(PathSelectors.regex("/recruter.*"))
+	                .paths(PathSelectors.any())
 	                .build()
 	                .apiInfo(apiInfo())
 	                .tags(new Tag("MutantController", "Mutant Controller"));

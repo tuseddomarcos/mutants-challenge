@@ -27,6 +27,20 @@ This source code contains the Spring batch structure for mutant challenge.
 ### Build, local install and run
 
 	mvn install spring-boot:run
+	
+### To see the api documentation
+
+	http://localhost:8080/swagger-ui/index.html#/
+
+
+### Data Base Console
+
+http://localhost:8080/h2-console/
+
+Data conection: 
+ - URL: jdbc:h2:~/BdMutant
+ - User Name: mutantDB
+ - Password: "mutantTuseddo"
 
 
 |   Version| Author  |  Company | Description 

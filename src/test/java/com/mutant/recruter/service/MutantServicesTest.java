@@ -13,8 +13,8 @@ import org.mockito.Mock;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import com.mutant.recruter.dto.RequestMutant;
 import com.mutant.recruter.exception.InvalidDNAException;
-import com.mutant.recruter.request.RequestMutant;
 
 @ExtendWith(SpringExtension.class)
 class MutantServicesTest {

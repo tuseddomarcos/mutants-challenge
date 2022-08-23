@@ -21,8 +21,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mutant.recruter.dto.RequestMutant;
 import com.mutant.recruter.dto.Stats;
-import com.mutant.recruter.request.RequestMutant;
 import com.mutant.recruter.service.DnaStatisticsService;
 import com.mutant.recruter.service.MutantServices;
 

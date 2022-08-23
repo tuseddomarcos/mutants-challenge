@@ -1,8 +1,5 @@
 package com.mutant.recruter.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.service.spi.ServiceException;
@@ -12,13 +9,13 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mutant.recruter.dto.Stats;
 import com.mutant.recruter.exception.InvalidDNAException;
 import com.mutant.recruter.request.RequestMutant;
 import com.mutant.recruter.service.DnaStatisticsService;
@@ -43,9 +40,9 @@ public class MutantController {
 	@Autowired
 	DnaStatisticsService dnaStatisticsService;
 
-	@ApiOperation(value = "Mutant", notes = "Retorna si el ADN es de un mutante")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "ok"), @ApiResponse(code = 403, message = "Forbidden"),
-			@ApiResponse(code = 400, message = "Bad Request"), @ApiResponse(code = 500, message = "Interval Server Error") })
+	@ApiOperation(value = "Mutant", notes = "Recibe como parámetro una secuencia de ADN y responde si la misma pertenece, o no, a un mutante.")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "ok", response =Boolean.class), @ApiResponse(code = 403, message = "Forbidden", response =Boolean.class),
+			@ApiResponse(code = 400, message = "Bad Request", response = InvalidDNAException.class), @ApiResponse(code = 500, message = "Interval Server Error", response = Exception.class) })
 	@PostMapping(value = "/mutant/", consumes = JSON_UTF8, produces = JSON_UTF8)
 	public ResponseEntity<Object> isMutant(@Validated @RequestBody RequestMutant requestBody) throws ServiceException {
 		logger.info("Llamada al servicio /mutant/ con el request body : {}", requestBody.toString());
@@ -63,9 +60,9 @@ public class MutantController {
 
 	}
 
-	@ApiOperation(value = "Stats", notes = "Retorna estadisticas de los mutantes")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "ok"),
-			@ApiResponse(code = 500, message = "Interval Server Error") })
+	@ApiOperation(value = "Stats", notes = "Devuelve estadísticas en base a las secuencias de ADN que han sido consultadas.")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "ok", response = Stats.class),
+			@ApiResponse(code = 500, message = "Interval Server Error", response = Exception.class) })
 	@GetMapping(value = "/stats", produces = JSON_UTF8)
 	public ResponseEntity<Object> getStats() throws ServiceException {
 		logger.info("Llamada al servicio /stats");

@@ -19,11 +19,9 @@ public class MutantServices {
 	public boolean isMutant(RequestMutant dna) throws Exception {
 		logger.info("Validate if dna is mutant");
 			boolean validateMutant = new MutantDetector(dna).isMutant();
-			DnaStatistics mutantDna = new DnaStatistics(dna.getDna(),validateMutant);
+			DnaStatistics mutantDna = new DnaStatistics(dna.dnaToString(),validateMutant);
 			dnaStatisticsService.updateStatistics(mutantDna);
 			return validateMutant;
-		
-		
 	}
 
 }

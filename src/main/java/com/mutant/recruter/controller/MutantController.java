@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mutant.recruter.dto.RequestMutant;
 import com.mutant.recruter.dto.Stats;
 import com.mutant.recruter.exception.InvalidDNAException;
-import com.mutant.recruter.request.RequestMutant;
 import com.mutant.recruter.service.DnaStatisticsService;
 import com.mutant.recruter.service.MutantServices;
 

@@ -1,4 +1,4 @@
-package com.mutant.recruter.request;
+package com.mutant.recruter.dto;
 
 import java.io.Serializable;
 import java.util.Arrays;

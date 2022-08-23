@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import com.mutant.recruter.dto.RequestMutant;
 import com.mutant.recruter.exception.InvalidDNAException;
-import com.mutant.recruter.request.RequestMutant;
 
 class MutantDetectorTest {
 	

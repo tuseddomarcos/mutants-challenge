@@ -1,8 +1,8 @@
 package com.mutant.recruter.util.detector;
 
 import com.mutant.recruter.constants.Constants;
+import com.mutant.recruter.dto.RequestMutant;
 import com.mutant.recruter.exception.InvalidDNAException;
-import com.mutant.recruter.request.RequestMutant;
 
 public class MutantDetector {
 	

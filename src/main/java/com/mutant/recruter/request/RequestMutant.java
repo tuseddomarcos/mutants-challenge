@@ -1,6 +1,7 @@
 package com.mutant.recruter.request;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -28,5 +29,9 @@ public class RequestMutant implements Serializable {
 
 	public String[] getDna() {
 		return this.dna;
+	}
+	
+	public String dnaToString() {
+		return Arrays.toString(dna);
 	}
 }

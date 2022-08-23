@@ -5,12 +5,9 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.JsonFactoryBuilder;
 import com.mutant.recruter.entitie.DnaStatistics;
 import com.mutant.recruter.request.RequestMutant;
 import com.mutant.recruter.util.detector.MutantDetector;
-
-import springfox.documentation.spring.web.json.Json;
 
 @Service
 public class MutantServices {

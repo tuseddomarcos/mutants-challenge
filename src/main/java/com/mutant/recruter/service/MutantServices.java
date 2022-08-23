@@ -5,9 +5,12 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonFactoryBuilder;
 import com.mutant.recruter.entitie.DnaStatistics;
 import com.mutant.recruter.request.RequestMutant;
 import com.mutant.recruter.util.detector.MutantDetector;
+
+import springfox.documentation.spring.web.json.Json;
 
 @Service
 public class MutantServices {
@@ -19,11 +22,9 @@ public class MutantServices {
 	public boolean isMutant(RequestMutant dna) throws Exception {
 		logger.info("Validate if dna is mutant");
 			boolean validateMutant = new MutantDetector(dna).isMutant();
-			DnaStatistics mutantDna = new DnaStatistics(dna.getDna(),validateMutant);
+			DnaStatistics mutantDna = new DnaStatistics(dna.dnaToString(),validateMutant);
 			dnaStatisticsService.updateStatistics(mutantDna);
 			return validateMutant;
-		
-		
 	}
 
 }

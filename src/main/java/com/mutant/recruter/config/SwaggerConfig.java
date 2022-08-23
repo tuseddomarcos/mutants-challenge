@@ -24,7 +24,8 @@ public class SwaggerConfig{
 	                .paths(PathSelectors.any())
 	                .build()
 	                .apiInfo(apiInfo())
-	                .tags(new Tag("MutantController", "Mutant Controller"));
+	                .tags(new Tag("MutantController", "Mutant Controller"))
+	                .useDefaultResponseMessages(false);
 	    }
 
 	private ApiInfo apiInfo() {
